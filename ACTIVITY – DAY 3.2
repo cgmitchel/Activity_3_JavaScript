@@ -1,0 +1,39 @@
+// Ask user for input
+let input = prompt("Enter a number between 1 and 999:");
+let number = parseInt(input);
+
+// Check if valid number
+if (isNaN(number)) {
+  console.log("⚠️ Please enter a valid number.");
+} else if (number < 1 || number > 999) {
+  console.log("⚠️ Number must be between 1 and 999.");
+} else {
+  // Arrays for words
+  let ones = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"];
+  let teens = ["Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", 
+               "Sixteen", "Seventeen", "Eighteen", "Nineteen"];
+  let tens = ["", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"];
+
+  let words = "";
+
+  // Process hundreds
+  if (number >= 100) {
+    let hundredPart = Math.floor(number / 100);
+    words += ones[hundredPart] + " Hundred ";
+    number %= 100;
+  }
+
+  // Process tens and teens
+  if (number >= 20) {
+    let tensPart = Math.floor(number / 10);
+    words += tens[tensPart] + " ";
+    number %= 10;
+  } else if (number >= 10) {
+    words += teens[number - 10] + " ";
+    number = 0;
+  }
+
+  // Process ones
+  if (number > 0) {
+    words += ones[number] + " ";
+  }
