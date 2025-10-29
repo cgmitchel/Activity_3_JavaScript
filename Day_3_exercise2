@@ -1,0 +1,22 @@
+// Ask user for input
+let input = prompt("Enter the height of the triangle:");
+let height = parseInt(input);
+
+// Validate input
+if (isNaN(height)) {
+  console.log("⚠️ Please enter a valid number.");
+} else if (height <= 0) {
+  console.log("⚠️ Height must be a positive number.");
+} else {
+  let row = height; // start from given height
+
+  while (row > 0) {
+    // Print leading spaces
+    let spaces = " ".repeat(height - row);
+    // Print stars with spaces in between
+    let stars = "* ".repeat(row);
+    // Combine and trim
+    console.log(spaces + stars.trim());
+    row--;
+  }
+}
