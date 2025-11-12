@@ -10,7 +10,7 @@ if (isNaN(number)) {
 } else {
   // Arrays for words
   let ones = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"];
-  let teens = ["Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", 
+  let teens = ["Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen",
                "Sixteen", "Seventeen", "Eighteen", "Nineteen"];
   let tens = ["", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"];
 
@@ -37,3 +37,8 @@ if (isNaN(number)) {
   if (number > 0) {
     words += ones[number] + " ";
   }
+
+  // Clean up and display
+  words = words.trim(); // removes extra spaces
+  console.log("👉 " + words);
+}
