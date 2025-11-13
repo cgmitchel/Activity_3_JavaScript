@@ -1,0 +1,26 @@
+// Function to print an 'X' pattern
+function printXPattern(height) {
+  if (height <= 0 || height % 2 === 0) {
+    console.log("⚠️ Height must be a positive odd number.");
+    return;
+  }
+  // Loop through each row
+  for (let i = 0; i < height; i++) {
+    let line = "";
+
+    // Loop through each column
+    for (let j = 0; j < height; j++) {
+      // Print '*' on the diagonals
+      if (j === i || j === height - i - 1) {
+        line += "*";
+      } else {
+        line += " ";
+      }
+    }
+    console.log(line);
+  }
+}
+
+// Example usage:
+let height = 7;
+printXPattern(height);
