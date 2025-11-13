@@ -1,0 +1,49 @@
+// Given data
+var record = [
+  {
+    "Name": "Gibo",
+    "Age": 16,
+    "SkillSet": [
+      { "Skill": "SAP UI5" },
+      { "Skill": "SAP HANA" }
+    ]
+  },
+  {
+    "Name": "Patrick",
+    "Age": 22,
+    "SkillSet": [
+      { "Skill": "SAP UI5" },
+      { "Skill": "SAP HANA" },
+      { "Skill": "SAP ABAP" }
+    ]
+  },
+  {
+    "Name": "MJ",
+    "Age": 24,
+    "SkillSet": [
+      { "Skill": "SAP HANA" }
+    ]
+  }
+];
+
+// Function to find the person with the most skills
+function findMostSkilledPerson(data) {
+  let maxSkills = 0;
+  let mostSkilledPerson = null;
+
+  for (let i = 0; i < data.length; i++) {
+    let skillCount = data[i].SkillSet.length;
+
+    if (skillCount > maxSkills) {
+      maxSkills = skillCount;
+      mostSkilledPerson = data[i];
+    }
+  }
+
+  // Display result
+  console.log("Name: " + mostSkilledPerson.Name);
+  console.log("Age: " + mostSkilledPerson.Age);
+}
+
+// Run the function
+findMostSkilledPerson(record);
