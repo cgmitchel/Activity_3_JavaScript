@@ -1,0 +1,22 @@
+// Given arrays
+let color = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
+let o = ["th", "st", "nd", "rd"];
+
+// Loop through the colors array
+for (let i = 0; i < color.length; i++) {
+  let position = i + 1; // because array index starts at 0
+  let suffix;
+
+  // Determine the correct suffix
+  if (position % 10 == 1 && position != 11) {
+    suffix = o[1]; // "st"
+  } else if (position % 10 == 2 && position != 12) {
+    suffix = o[2]; // "nd"
+  } else if (position % 10 == 3 && position != 13) {
+    suffix = o[3]; // "rd"
+  } else {
+    suffix = o[0]; // "th"
+  }
+
+  console.log(`${position}${suffix} choice is ${color[i]}.`);
+}
