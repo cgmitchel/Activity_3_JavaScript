@@ -1,0 +1,14 @@
+// Function to calculate the perimeter of a triangle
+function calculatePerimeter(a, b, c) {
+  // a, b, and c are the three sides of the triangle
+  let perimeter = a + b + c;
+  return perimeter; // return the total perimeter
+}
+
+// Example usage:
+let side1 = 5;
+let side2 = 7;
+let side3 = 10;
+
+let result = calculatePerimeter(side1, side2, side3);
+console.log("The perimeter of the triangle is: " + result);
